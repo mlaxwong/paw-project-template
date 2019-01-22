@@ -1,6 +1,15 @@
 <template>
-  <div>this is example</div>
+  <div>
+    <p>{{ message }}</p>
+    <input type="text" v-model="message" />
+  </div>
 </template>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      message: ''
+    }
+  }
+}
 </script>

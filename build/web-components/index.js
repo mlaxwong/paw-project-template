@@ -1,18 +1,7 @@
 import Vue from 'vue'
 import vueCustomElement from 'vue-custom-element'
+import Example from './Example'
 
 Vue.use(vueCustomElement)
 
-Vue.customElement('widget-vue', {
-  props: [
-    'prop1',
-    'prop2',
-    'prop3'
-  ],
-  data () {
-    return {
-      message: 'Hello Vue!'
-    }
-  },
-  template: '<p>{{ message }}, {{ prop1  }}, {{prop2}}, {{prop3}}</p>'
-})
+Vue.customElement('widget-vue', Example)
