@@ -6,11 +6,11 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   mode: 'development',
   entry: [
-    './build/web-components/index.js',
-    './build/scss/style.scss'
+    './src/assets/web-components/index.js',
+    './src/assets/scss/style.scss'
   ],
   output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, '../static/dist'),
       filename: 'bundle.js',
       publicPath: '/'
   },
@@ -18,7 +18,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
         'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('build'),
+        '@': path.resolve('src/assets'),
     }
   },
   module: {
@@ -27,7 +27,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [path.resolve('build')],
+        include: [path.resolve('src/assets')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
