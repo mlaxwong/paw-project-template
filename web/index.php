@@ -3,6 +3,8 @@ define('PATH_ROOT', dirname(__DIR__));
 define('PATH_BASE', PATH_ROOT . '/src/app');
 define('PATH_VENDOR', PATH_ROOT . '/vendor');
 
+require PATH_ROOT . '/build/installer/check.php';
+
 define('YII_ENV', 'dev');
 define('YII_DEBUG', true);
 
