@@ -8,8 +8,16 @@
             "email": "mlaxwong@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "project\\": "src/app/"
+        }
+    },
     "require": {
         "php": ">=5.4.0",
         "mlaxwong/paw": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "^2.0"
     }
 }
