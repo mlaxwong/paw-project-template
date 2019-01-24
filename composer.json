@@ -15,7 +15,8 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "mlaxwong/paw": "dev-master"
+        "mlaxwong/paw": "dev-master",
+        "mlaxwong/paw-bootstrap4": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "^2.0"

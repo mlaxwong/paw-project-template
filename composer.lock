@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30cf01885864726f81237a3236b16720",
+    "content-hash": "252ff3572a2cf27355632da44b8528ab",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -314,6 +314,209 @@
             ],
             "description": "Paw Yii2 Framework",
             "time": "2019-01-23T08:01:24+00:00"
+        },
+        {
+            "name": "mlaxwong/paw-bootstrap4",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mlaxwong/paw-bootstrap4.git",
+                "reference": "acf861af09cbeb5b7f17a3ae1c79b227013aef16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mlaxwong/paw-bootstrap4/zipball/acf861af09cbeb5b7f17a3ae1c79b227013aef16",
+                "reference": "acf861af09cbeb5b7f17a3ae1c79b227013aef16",
+                "shasum": ""
+            },
+            "require": {
+                "mlaxwong/paw": "dev-master",
+                "npm-asset/bootstrap": "^4.2",
+                "npm-asset/bootstrap.native": "^2.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "paw\\bootstrap4\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mlax Wong",
+                    "email": "mlaxwong@gmail.com"
+                }
+            ],
+            "time": "2019-01-24T07:30:29+00:00"
+        },
+        {
+            "name": "npm-asset/bootstrap",
+            "version": "4.2.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.2.1.tgz",
+                "reference": null,
+                "shasum": "8f8bdca024dbf0e8644da32e918c8a03a90a5757"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/twbs/bootstrap/issues"
+                },
+                "npm-asset-main": "dist/js/bootstrap",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/twbs/bootstrap.git"
+                },
+                "npm-asset-scripts": {
+                    "start": "npm-run-all --parallel watch docs-serve",
+                    "blc": "blc --exclude-external --filter-level 3 --follow --get --ordered --recursive --host-requests 4 --input http://localhost:3000/",
+                    "http-server": "http-server --silent -p 3000",
+                    "bundlesize": "bundlesize",
+                    "check-broken-links": "npm-run-all --parallel --race \"http-server -- _gh_pages/\" blc",
+                    "css": "npm-run-all css-compile css-prefix css-minify css-copy",
+                    "css-copy": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/css/ site/docs/$npm_package_version_short/dist/",
+                    "css-main": "npm-run-all css-lint css-compile-main css-prefix-main css-minify-main css-copy",
+                    "css-docs": "npm-run-all css-compile-docs css-prefix-docs css-minify-docs",
+                    "css-compile": "npm-run-all --parallel css-compile-*",
+                    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css && npm run css-copy",
+                    "css-compile-docs": "cross-env-shell node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 site/docs/$npm_package_version_short/assets/scss/docs.scss site/docs/$npm_package_version_short/assets/css/docs.min.css",
+                    "css-lint": "npm-run-all --parallel css-lint-*",
+                    "css-lint-main": "stylelint --syntax scss \"scss/**/*.scss\"",
+                    "css-lint-docs": "stylelint --syntax scss \"site/docs/**/assets/scss/*.scss\" && stylelint \"site/docs/**/*.css\"",
+                    "css-lint-vars": "fusv scss/ site/docs/",
+                    "css-minify": "npm-run-all --parallel css-minify-*",
+                    "css-minify-main": "cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
+                    "css-minify-docs": "cross-env-shell cleancss --level 1 --format breaksWith=lf --source-map --source-map-inline-sources --output site/docs/$npm_package_version_short/assets/css/docs.min.css site/docs/$npm_package_version_short/assets/css/docs.min.css",
+                    "css-prefix": "npm-run-all --parallel css-prefix-*",
+                    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+                    "css-prefix-docs": "postcss --config build/postcss.config.js --replace \"site/docs/**/*.css\" \"site/docs/**/*.css\"",
+                    "js": "npm-run-all js-compile js-minify js-copy",
+                    "js-copy": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/js/ site/docs/$npm_package_version_short/dist/",
+                    "js-main": "npm-run-all js-lint js-compile-main js-minify-main",
+                    "js-docs": "npm-run-all js-lint-docs js-minify-docs",
+                    "js-compile": "npm-run-all --parallel js-compile-* --sequential js-copy",
+                    "js-compile-standalone": "rollup --environment BUNDLE:false --config build/rollup.config.js --sourcemap",
+                    "js-compile-bundle": "rollup --environment BUNDLE:true --config build/rollup.config.js --sourcemap",
+                    "js-compile-plugins": "node build/build-plugins.js",
+                    "js-compile-plugins-coverage": "cross-env NODE_ENV=test node build/build-plugins.js",
+                    "js-lint": "npm-run-all --parallel js-lint-*",
+                    "js-lint-main": "eslint js/src js/tests build/",
+                    "js-lint-docs": "eslint site/",
+                    "js-minify": "npm-run-all --parallel js-minify-main js-minify-docs",
+                    "js-minify-main": "npm-run-all js-minify-standalone js-minify-bundle",
+                    "js-minify-standalone": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.js.map,includeSources,url=bootstrap.min.js.map\" --output dist/js/bootstrap.min.js dist/js/bootstrap.js",
+                    "js-minify-bundle": "uglifyjs --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/bootstrap.bundle.js.map,includeSources,url=bootstrap.bundle.min.js.map\" --output dist/js/bootstrap.bundle.min.js dist/js/bootstrap.bundle.js",
+                    "js-minify-docs": "cross-env-shell uglifyjs --mangle --comments \\\"/^!/\\\" --output site/docs/$npm_package_version_short/assets/js/docs.min.js site/docs/$npm_package_version_short/assets/js/vendor/anchor.min.js site/docs/$npm_package_version_short/assets/js/vendor/clipboard.min.js site/docs/$npm_package_version_short/assets/js/vendor/bs-custom-file-input.min.js \"site/docs/$npm_package_version_short/assets/js/src/*.js\"",
+                    "js-test": "npm-run-all js-test-karma* js-test-integration",
+                    "js-test-karma": "karma start js/tests/karma.conf.js",
+                    "js-test-karma-old": "cross-env USE_OLD_JQUERY=true npm run js-test-karma",
+                    "js-test-karma-bundle": "cross-env BUNDLE=true npm run js-test-karma",
+                    "js-test-karma-bundle-old": "cross-env BUNDLE=true USE_OLD_JQUERY=true npm run js-test-karma",
+                    "js-test-integration": "rollup --config js/tests/integration/rollup.bundle.js",
+                    "js-test-cloud": "cross-env BROWSER=true npm run js-test-karma",
+                    "lint": "npm-run-all js-lint css-lint",
+                    "coveralls": "shx cat js/coverage/lcov.info | coveralls",
+                    "docs": "npm-run-all css-docs js-docs docs-compile docs-lint",
+                    "docs-compile": "bundle exec jekyll build",
+                    "docs-production": "cross-env JEKYLL_ENV=production npm run docs-compile",
+                    "docs-lint": "node build/vnu-jar.js",
+                    "docs-serve": "bundle exec jekyll serve",
+                    "docs-serve-only": "npm run docs-serve -- --skip-initial-build --no-watch",
+                    "update-deps": "ncu -a -x jquery -x bundlesize && npm update && bundle update && cross-env-shell echo Manually update \\\"site/docs/$npm_package_version_short/assets/js/vendor/\\\"",
+                    "release": "npm run dist && npm run release-sri && npm run release-zip && npm run docs-production",
+                    "release-sri": "node build/generate-sri.js",
+                    "release-version": "node build/change-version.js",
+                    "release-zip": "cross-env-shell \"shx rm -rf bootstrap-$npm_package_version-dist && shx cp -r dist/ bootstrap-$npm_package_version-dist && zip -r9 bootstrap-$npm_package_version-dist.zip bootstrap-$npm_package_version-dist && shx rm -rf bootstrap-$npm_package_version-dist\"",
+                    "dist": "npm-run-all --parallel css js",
+                    "test": "npm-run-all lint dist js-test docs-compile docs-lint bundlesize",
+                    "watch": "npm-run-all --parallel watch-*",
+                    "watch-css-main": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
+                    "watch-css-docs": "nodemon --watch \"site/docs/**/assets/scss/\" --ext scss --exec \"npm run css-docs\"",
+                    "watch-js-main": "nodemon --watch js/src/ --ext js --exec \"npm run js-compile\"",
+                    "watch-js-docs": "nodemon --watch \"site/docs/**/assets/js/src/\" --ext js --exec \"npm run js-docs\""
+                },
+                "npm-asset-engines": {
+                    "node": ">=6"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "The Bootstrap Authors",
+                    "url": "https://github.com/twbs/bootstrap/graphs/contributors"
+                },
+                {
+                    "name": "Twitter, Inc."
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "https://getbootstrap.com/",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "time": "2018-12-21T18:58:03+00:00"
+        },
+        {
+            "name": "npm-asset/bootstrap.native",
+            "version": "2.0.24",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/bootstrap.native/-/bootstrap.native-2.0.24.tgz",
+                "reference": null,
+                "shasum": "52e473e4aeff770ca7e0aae06369799167bc2de1"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/thednp/bootstrap.native/issues"
+                },
+                "npm-asset-main": "dist/bootstrap-native.js",
+                "npm-asset-directories": [],
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "git+https://github.com/thednp/bootstrap.native.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "echo \"Error: no test specified\" && exit 1",
+                    "build": "node build.js > dist/bootstrap-native.js && npm run build-min",
+                    "build-v4": "node build-v4.js > dist/bootstrap-native-v4.js && npm run build-v4-min",
+                    "build-min": "node build.js -m > dist/bootstrap-native.min.js",
+                    "build-v4-min": "node build-v4.js -m > dist/bootstrap-native-v4.min.js",
+                    "watch": "onchange \"lib/*/**\" -i -- npm run build && npm run build-v4"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "dnp_theme"
+                }
+            ],
+            "description": "Native Javascript for Bootstrap, the sweetest Javascript library without jQuery.",
+            "homepage": "https://thednp.github.io/bootstrap.native/",
+            "keywords": [
+                "bootstrap",
+                "bootstrap.native",
+                "native javascript",
+                "vanilla javascript",
+                "vanilla js"
+            ],
+            "time": "2018-10-26T10:06:48+00:00"
         },
         {
             "name": "nterms/yii2-mailqueue",
@@ -848,7 +1051,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mlaxwong/paw": 20
+        "mlaxwong/paw": 20,
+        "mlaxwong/paw-bootstrap4": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

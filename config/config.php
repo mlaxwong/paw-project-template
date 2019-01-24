@@ -1,5 +1,6 @@
 <?php
 $config = [
+    'vendorPath' => PATH_VENDOR,
     'basePath' => PATH_BASE,
     'runtimePath' => PATH_ROOT . '/runtime',
     'aliases' => [
@@ -9,6 +10,9 @@ $config = [
         'public' => \project\modules\_public\Module::class,
     ],
     'components' => [
+        'assetManager' => [
+        	'linkAssets' => true,
+    	],
         'errorHandler' => [
             'errorAction' => 'public/default/error',
         ],
