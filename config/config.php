@@ -8,6 +8,7 @@ $config = [
     ],
     'modules' => [
         'public' => \project\modules\_public\Module::class,
+        'admin' => \project\modules\_admin\Module::class,
     ],
     'components' => [
         'assetManager' => [

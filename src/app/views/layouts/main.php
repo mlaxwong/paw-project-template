@@ -1,7 +1,7 @@
 <?php
 \project\assets\AssetBundle::register($this);
 ?>
-<?php $this->beginContent('@app/views/layouts/_clear.php'); ?>
+<?php $this->beginContent('@app/views/layouts/base.php'); ?>
 <div class="container">
     <?= $content; ?>
 </div>
